@@ -194,11 +194,13 @@
   max-width: 640px;
   display: flex;
   flex-direction: column;
+  /* align-items: center; */
   gap: 8px;
   border: 1px solid white;
   border-radius: 16px;
 }
 .card-content {
+  width: 100%;
   display: flex;
   flex-direction: column;
   border: 1px solid blue;
@@ -213,6 +215,11 @@
 .red-b {
   border-color: red;
 } */
+.user-icon {
+  width: 128px;
+  height: 128px;
+  align-self: center;
+}
 
 .highlight {
   font-weight: bold;
@@ -227,8 +234,37 @@
   padding: 12px;
   border: 1px dotted white;
   border-radius: 16px;
-  .form-input {
-    height: 20px;
-    font-size: 16px;
-  }
+}
+.form-input {
+  height: 20px;
+  font-size: 16px;
+}
+
+.user-card {
+  padding: 20px;
+  max-width: 840px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid grey;
+  border-radius: 16px;
+}
+.user-status {
+  display: flex;
+  gap: 8px;
+  align-self: center;
+}
+.red-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  display: block;
+  background-color: red;
+}
+.green-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  display: block;
+  background-color: green;
 }
