@@ -13,6 +13,7 @@ import { CardWrapper } from './CardWrapper';
 import { UserDetails } from './UserDetails';
 import { ProductList } from './ProductList';
 import { NamesList } from './NamesList';
+import { Alert } from './Alert';
 
 const productsMock = [
   {
@@ -42,6 +43,9 @@ function App() {
 
   return (
     <div id="container">
+      <Alert>Your changes have been saved!</Alert>
+      <Alert type="error">Something went wrong!</Alert>
+
       {/* <Hello />
       <HelloWithoutJSX /> */}
       <Welcome name="Bruce" alias="Batman"/>
