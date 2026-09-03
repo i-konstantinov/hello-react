@@ -14,6 +14,9 @@ import { UserDetails } from './UserDetails';
 import { ProductList } from './ProductList';
 import { NamesList } from './NamesList';
 import { Alert } from './Alert';
+import { CustomButton } from './CustomButton';
+import { Contact } from './Contact';
+import { Newsletter } from './Newsletter';
 
 const productsMock = [
   {
@@ -38,13 +41,24 @@ const productsMock = [
     categories: ["Apple", "Work Stations"]
   }
 ];
- 
+
+
 function App() {
+  let btnText = "Like";
+  const handleCustomBtnClick = () => {
+    btnText = btnText === "Like" ? "Unlike":"Like";
+    console.log(btnText);
+  }
 
   return (
     <div id="container">
+      <Contact />
+      <Newsletter />
+
       <Alert>Your changes have been saved!</Alert>
       <Alert type="error">Something went wrong!</Alert>
+
+      <CustomButton text={btnText} onClick={handleCustomBtnClick} />
 
       {/* <Hello />
       <HelloWithoutJSX /> */}
