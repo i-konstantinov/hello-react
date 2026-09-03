@@ -1,4 +1,5 @@
 import './App.css'
+import { useState } from "react";
 import { Welcome } from './Welcome';
 import { Button } from './Button';
 import { Hello, HelloWithoutJSX } from './Hello';
@@ -17,6 +18,9 @@ import { Alert } from './Alert';
 import { CustomButton } from './CustomButton';
 import { Contact } from './Contact';
 import { Newsletter } from './Newsletter';
+import { Counter } from './Counter';
+import { LoginCard } from './LoginCard';
+
 
 const productsMock = [
   {
@@ -41,24 +45,34 @@ const productsMock = [
     categories: ["Apple", "Work Stations"]
   }
 ];
-
+const positiveLabel = "Like";
+const negativeLabel = "Unlike";
 
 function App() {
-  let btnText = "Like";
-  const handleCustomBtnClick = () => {
-    btnText = btnText === "Like" ? "Unlike":"Like";
-    console.log(btnText);
+  const [btnText, setText] = useState(positiveLabel);
+  const handleCustomBtnClick = ({event}) => {
+    // console.log("Clicked element", event.target);
+    // console.log("Click coords:", event.clientX, event.clientY);
+
+    alert(`Hey you clicked on "${btnText}", click coords: x=${event.clientX}; y=${event.clientY}`);
+
+    setText(btnText === positiveLabel ? negativeLabel : positiveLabel);
   }
 
   return (
     <div id="container">
+
+      <LoginCard />
+
+      <Counter />
+      <CustomButton text={btnText} onClick={handleCustomBtnClick} />
+
       <Contact />
       <Newsletter />
 
       <Alert>Your changes have been saved!</Alert>
       <Alert type="error">Something went wrong!</Alert>
 
-      <CustomButton text={btnText} onClick={handleCustomBtnClick} />
 
       {/* <Hello />
       <HelloWithoutJSX /> */}
