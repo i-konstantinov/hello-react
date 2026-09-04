@@ -20,6 +20,7 @@ import { Contact } from './Contact';
 import { Newsletter } from './Newsletter';
 import { Counter } from './Counter';
 import { LoginCard } from './LoginCard';
+import { UserDashboard } from './UserDashboard';
 
 
 const productsMock = [
@@ -61,6 +62,9 @@ function App() {
 
   return (
     <div id="container">
+
+      <UserDashboard isPremium={true}/>
+      <UserDashboard />
 
       <LoginCard />
 
